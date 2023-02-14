@@ -40,4 +40,32 @@ export async function appRoutes(app:FastifyInstance){
 
     return tasks
   })
+
+  app.put('/task/:id', async (req) => {
+
+    const updatedIdTaskBody = z.object({
+      id: z.string().uuid(),
+    })
+    const updatedTaskBody = z.object({
+      title: z.string(),
+      description: z.string(),
+      color: z.string(),
+    })
+
+    const { id } = updatedIdTaskBody.parse(req.params)
+    const { title, description, color } = updatedTaskBody.parse(req.body)
+
+    const taskUpdated = await prisma.task.update({
+      where: {
+        id: id
+      },
+      data: {
+        title: title,
+        description: description,
+        color: color,
+      }
+    })
+
+    return taskUpdated
+  })
 }

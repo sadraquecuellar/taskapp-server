@@ -3,9 +3,10 @@
 server side of taskapp using node js
 
 tools used:
-- fastify
-- prisma (ORM)
-- zod (validations)
+- react-query
+- material-ui
+- dayjs (Dates)
+- phosphor-react (icons)
 
 
 npm run dev to run the server
