@@ -2,7 +2,7 @@ import { FastifyInstance } from "fastify"
 import {z} from 'zod'
 import { prisma } from "./lib/prisma"
 
-export default async function appRoutes(app:FastifyInstance){
+export async function appRoutes(app:FastifyInstance){
   app.get('/', async () => {
     return {
       ping: 'pong',
