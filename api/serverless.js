@@ -1,8 +1,8 @@
 "use strict";
 
 // Read the .env file.
-import * as dotenv from "dotenv";
-dotenv.config();
+// import * as dotenv from "dotenv";
+// dotenv.config();
 
 // Require the framework
 import Fastify from "fastify";
