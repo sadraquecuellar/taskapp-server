@@ -1,5 +1,4 @@
-import * as dotenv from "dotenv";
-dotenv.config();
+"use strict";
 
 import Fastify from "fastify";
 
@@ -7,9 +6,8 @@ const app = Fastify({
   logger: true,
 });
 
-app.register(import("../src/routes.ts"), {
-  prefix: '/'
-});
+// Register your application as a normal plugin.
+app.register(import("../src/routes.ts"));
 
 export default async (req, res) => {
     await app.ready();
