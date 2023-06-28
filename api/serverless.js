@@ -1,14 +1,15 @@
-"use strict";
+import * as dotenv from "dotenv";
+dotenv.config();
 
 import Fastify from "fastify";
-
-import { appRoutes } from "../src/routes";
 
 const app = Fastify({
   logger: true,
 });
 
-app.register(appRoutes);
+app.register(import("../src/routes"), {
+  prefix: '/'
+});
 
 export default async (req, res) => {
     await app.ready();
