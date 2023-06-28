@@ -7,7 +7,7 @@ const app = Fastify({
   logger: true,
 });
 
-app.register(import("../src/routes"), {
+app.register(import("../src/routes.ts"), {
   prefix: '/'
 });
 
