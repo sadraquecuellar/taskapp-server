@@ -2,7 +2,7 @@
 
 import Fastify from "fastify";
 
-import { appRoutes } from "./routes";
+import { appRoutes } from "../src/routes";
 
 const app = Fastify({
   logger: true,
